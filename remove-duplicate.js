@@ -17,3 +17,19 @@ for(let i=0;i < arr.length;i++){
 }
     return arr.length
 };
+//optimized version
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    let indexCounter = 0;
+    for(let i =0; i < nums.length; i++){
+        if(nums[indexCounter] !== nums[i]){
+            indexCounter++;
+            nums[indexCounter] = nums[i]
+        }
+    }
+    return indexCounter +1;
+
+};
